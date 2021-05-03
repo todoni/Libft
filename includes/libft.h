@@ -6,12 +6,14 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 17:07:19 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 17:19:55 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/03 19:06:45 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+#include <stddef.h>
 
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);

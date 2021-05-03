@@ -6,9 +6,12 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 18:30:28 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 18:32:13 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/03 19:16:30 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -18,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (--len)
 	{
 		if (s[len] == c)
-			return (s + len);
+			return ((char*)s + len);
 	}
 	return (0);
 }

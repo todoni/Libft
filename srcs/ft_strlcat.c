@@ -6,9 +6,12 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 21:32:09 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 18:52:20 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/03 19:19:51 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

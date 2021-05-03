@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 18:27:45 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 18:29:15 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/03 19:15:04 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == c)
-			return (s);
+			return ((char*)s);
 		s++;
 	}
-	return (s);
+	return ((char*)s);
 }

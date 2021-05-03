@@ -6,9 +6,11 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 00:17:37 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 18:44:19 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/03 19:12:21 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
