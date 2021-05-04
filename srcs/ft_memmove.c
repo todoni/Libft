@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 18:21:10 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/04 12:53:48 by sohan            ###   ########.fr       */
+/*   Created: 2021/05/04 19:02:57 by sohan             #+#    #+#             */
+/*   Updated: 2021/05/04 19:09:31 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <stdlib.h>
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (c >= 0 && c <= 177)
-		return (c);
-	return (0);
+	void	*buffer;
+
+	buffer = malloc(len);
+	if (buffer == 0)
+		return (0);
+	buffer = ft_memcpy(buffer, (void*)src, len);
+	dst = ft_memcpy(dst, buffer, len);
+	return (dst);
 }

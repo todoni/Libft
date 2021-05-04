@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 18:21:10 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/04 12:53:48 by sohan            ###   ########.fr       */
+/*   Created: 2021/05/04 19:42:19 by sohan             #+#    #+#             */
+/*   Updated: 2021/05/04 21:10:40 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <stddef.h>
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c >= 0 && c <= 177)
-		return (c);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (*((unsigned char*)s1) == *((unsigned char*)s2) && i < n - 1 && \
+			*((unsigned char*)s1))
+	{
+		s1++;
+		s2++;
+		i++;
+	}
+	return ((int)(*((unsigned char*)s1) - *((unsigned char*)s2)));
 }

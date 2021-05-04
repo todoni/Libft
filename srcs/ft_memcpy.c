@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 18:21:10 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/04 12:53:48 by sohan            ###   ########.fr       */
+/*   Created: 2021/05/04 17:59:00 by sohan             #+#    #+#             */
+/*   Updated: 2021/05/04 18:53:42 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <stddef.h>
+
+void	*ft_memcpy(void *dst, void *src, size_t n)
 {
-	if (c >= 0 && c <= 177)
-		return (c);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		*((unsigned char*)dst + i) = *((unsigned char*)src + i);
+		i++;
+	}
+	return (dst);
 }

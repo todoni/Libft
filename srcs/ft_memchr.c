@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 18:21:10 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/04 12:53:48 by sohan            ###   ########.fr       */
+/*   Created: 2021/05/04 19:26:55 by sohan             #+#    #+#             */
+/*   Updated: 2021/05/04 19:40:15 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <stddef.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 0 && c <= 177)
-		return (c);
+	size_t	i;
+
+	i = 0;
+	while (*(unsigned char*)s && i < n)
+	{
+		if (*(unsigned char*)s == (unsigned char)c)
+			return ((void*)s);
+		s++;
+		i++;
+	}
 	return (0);
 }
