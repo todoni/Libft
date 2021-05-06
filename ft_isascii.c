@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/02 00:17:37 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 19:12:21 by sohan            ###   ########.fr       */
+/*   Created: 2021/05/03 18:21:10 by sohan             #+#    #+#             */
+/*   Updated: 2021/05/04 12:53:48 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_isascii(int c)
 {
-	int		difference;
-	size_t	index;
-
-	index = 0;
-	difference = 0;
-	if (n == 0)
-	{
-		return (0);
-	}
-	while (s1[index] == s2[index] && s1[index] != '\0' && \
-												index < n - 1)
-	{
-		index++;
-	}
-	difference = s1[index] - s2[index];
-	return (difference);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

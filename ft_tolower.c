@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 18:26:47 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 19:10:31 by sohan            ###   ########.fr       */
+/*   Created: 2021/05/03 18:23:44 by sohan             #+#    #+#             */
+/*   Updated: 2021/05/03 19:10:15 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	int	result;
 
 	result = c;
 	if (ft_isupper(c) != 0)
-		result -= 32;
+		result += 32;
 	return (result);
 }
