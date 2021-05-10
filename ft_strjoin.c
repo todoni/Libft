@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 03:28:28 by sohan             #+#    #+#             */
-/*   Updated: 2021/04/14 16:06:36 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/10 20:34:03 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_joined;
 
 	len_joined = ft_strlen(s1) + ft_strlen(s2);
-	str_joined = (char *)malloc((len_joined + 1) * sizeof(char));
+	str_joined = (char *)ft_calloc((len_joined + 1), sizeof(char));
 	if (str_joined == 0)
 		return (0);
 	str_joined = append_str(str_joined, s1);
