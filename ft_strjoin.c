@@ -10,77 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int		ft_strlen(char *str)
+char	*append_str(char *origin, const char *str)
 {
-	int	len;
-
-	len = 0;
-	while (*str)
-	{
-		str++;
-		len++;
-	}
-	return (len);
-}
-
-int		find_len(char **strs, int size)
-{
-	int i;
-	int len_joined;
+	size_t	i;
+	size_t	index;
 
 	i = 0;
-	len_joined = 0;
-	while (i < size - 1)
-	{
-		len_joined += ft_strlen(*strs);
-		i++;
-		strs++;
-	}
-	len_joined += ft_strlen(*strs);
-	return (len_joined);
-}
-
-void	append_str(char *origin, char *str)
-{
-	int index;
-	int i;
-
 	index = ft_strlen(str);
-	i = 0;
+	if (index == 0)
+		return (origin);
 	while (i < index)
 	{
 		origin[i] = str[i];
 		i++;
 	}
 	origin[i] = '\0';
+	return (origin);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str_joined;
-	int		len_joined;
-	int		i;
+	size_t	len_joined;
 
-	i = 0;
-	len_joined = find_len(strs, size);
-	len_joined += (ft_strlen(sep) * (size - 1));
+	len_joined = ft_strlen(s1) + ft_strlen(s2);
 	str_joined = (char *)malloc((len_joined + 1) * sizeof(char));
 	if (str_joined == 0)
 		return (0);
-	else if (size == 0)
-		return (str_joined);
-	while (i < size - 1)
-	{
-		append_str(str_joined, *strs);
-		str_joined += ft_strlen(*strs);
-		append_str(str_joined, sep);
-		str_joined += ft_strlen(sep);
-		strs++;
-		i++;
-	}
-	append_str(str_joined, *strs);
-	str_joined -= len_joined - ft_strlen(*strs);
+	str_joined = append_str(str_joined, s1);
+	str_joined += ft_strlen(s1);
+	str_joined = append_str(str_joined, s2);
+	str_joined -= ft_strlen(s1);
 	return (str_joined);
 }

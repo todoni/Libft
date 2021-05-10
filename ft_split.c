@@ -11,20 +11,15 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdbool.h>
 
-bool	is_seperator(char *charset, char str)
+int		is_seperator(char charset, char str)
 {
-	while (*charset)
-	{
-		if (str == *charset)
-			return (true);
-		charset++;
-	}
-	return (false);
+	if (str == charset)
+		return (1);
+	return (0);
 }
 
-int		count_word(char *str, char *charset)
+int		count_word(char *str, char charset)
 {
 	int	word_count;
 
@@ -44,7 +39,7 @@ int		count_word(char *str, char *charset)
 	return (word_count);
 }
 
-int		count_word_len(char *str, char *charset)
+int		count_word_len(char *str, char charset)
 {
 	int word_len;
 
@@ -57,7 +52,7 @@ int		count_word_len(char *str, char *charset)
 	return (word_len);
 }
 
-char	*put_words(char **strs, char *str, char *charset, int i)
+char	*put_words(char **strs, char *str, char charset, int i)
 {
 	int j;
 
@@ -74,7 +69,7 @@ char	*put_words(char **strs, char *str, char *charset, int i)
 	return (str);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char *str, char charset)
 {
 	char	**strs;
 	int		i;
