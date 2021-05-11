@@ -6,7 +6,7 @@
 #    By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 20:31:44 by sohan             #+#    #+#              #
-#    Updated: 2021/05/10 21:19:06 by sohan            ###   ########.fr        #
+#    Updated: 2021/05/11 18:30:02 by sohan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRCBONUS = ft_lstnew.c
 all: ${TARGET}
 
 OBJECTS = ${SOURCES:.c=.o}
+
+OBJBONUS = ${SRCBONUS:.c=.o}
 
 ${TARGET}: ${OBJECTS}
 	ar rc $@ ${OBJECTS}
@@ -34,6 +36,4 @@ fclean: clean
 
 re: fclean all
 
-bonus:
-	${CC} ${CFLAGS} ${SRCBONUS} -o ${SRCBONUS:.c=.o}
-	ar rc ${TARGET} ${SRCBONUS:.c=.o}
+bonus: ${TARGET} ${OBJBONUS}
