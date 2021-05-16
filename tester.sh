@@ -1,21 +1,21 @@
 #!/bin/bash
-echo -e "\033[32;1m"NORM"\033[m"
-read $a
-norminette ./*.c ./*.h
+#echo -e "\033[32;1m"NORM"\033[m"
+#read $a
+#norminette ./*.c ./*.h
 echo -e "\033[32;1m"LIBFT TEST"\033[m"
 read $a
 git clone https://github.com/jtoty/Libftest
 cd Libftest/
-./grademe.sh
+./grademe.sh -n
 sed -i "" 's/~\/libft/..\//' my_config.sh
-./grademe.sh
+./grademe.sh -n
 cd ..
 echo -e "\033[32;1m"WAR MACHINE"\033[m"
 read $a
 git clone https://github.com/ska42/libft-war-machine
 cd libft-war-machine/
-bash grademe.sh
-bash grademe.sh
+bash grademe.sh -n
+bash grademe.sh -n
 cd ..
 echo -e "\033[32;1m"unit-test"\033[m"
 read $a
