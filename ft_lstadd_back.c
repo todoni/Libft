@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 20:44:11 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/15 21:35:23 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/16 15:36:25 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*start;
+	t_list	*move;
 
-	start = *lst;
+	move = *lst;
 	if (*lst)
 	{
-		*lst = ft_lstlast(*lst);
-		(*lst)->next = new;
-		*lst = start;
+		move = ft_lstlast(*lst);
+		move->next = new;
 	}
 	else
 		*lst = new;
