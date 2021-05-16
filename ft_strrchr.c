@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 18:30:28 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 19:16:30 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/16 21:20:12 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	len;
 
 	len = ft_strlen(s);
-	if (c == 0 || len == 0)
+	if (c == 0)
 		return ((char*)(s + ft_strlen(s)));
 	while (len > 0)
 	{

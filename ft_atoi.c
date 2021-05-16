@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 18:52:36 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/04 12:29:22 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/16 22:49:47 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi(const char *str)
 		if (*str == '-')
 			sign *= -1;
 		str++;
-		if (ft_isdigit(*str) == 0)
+		if (ft_isdigit(*str) == 0) 
 			return (result);
 	}
 	while (ft_isdigit(*str))
