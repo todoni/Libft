@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 03:28:28 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/10 20:34:03 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/17 21:33:38 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,11 @@ char	*append_str(char *origin, const char *str)
 
 	i = 0;
 	index = ft_strlen(str);
-	if (index == 0)
-		return (origin);
 	while (i < index)
 	{
 		origin[i] = str[i];
 		i++;
 	}
-	origin[i] = '\0';
 	return (origin);
 }
 

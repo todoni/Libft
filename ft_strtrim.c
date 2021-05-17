@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 18:14:41 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/10 16:58:08 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/17 19:15:32 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,6 @@ char			*ft_strtrim(char const *s1, char const *set)
 		front += find_location(s1 + front, set);
 		back += find_location(s1 + len - 1 - back, set);
 	}
-	result = (char*)ft_calloc(len - (front + back) + 1, sizeof(char));
-	if (result == 0)
-		return (0);
 	result = ft_substr(s1, (unsigned int)front, len - (front + back));
 	return (result);
 }

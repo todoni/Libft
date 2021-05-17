@@ -6,37 +6,37 @@
 #    By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 20:31:44 by sohan             #+#    #+#              #
-#    Updated: 2021/05/11 22:58:08 by sohan            ###   ########.fr        #
+#    Updated: 2021/05/17 20:52:42 by sohan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-TARGET = libft.a
-SOURCES = ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c ft_isupper.c ft_isprint.c ft_tolower.c ft_toupper.c ft_strncmp.c ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strlcpy.c ft_strlcat.c ft_strlen.c ft_isspace.c ft_strdup.c ft_memset.c ft_bzero.c ft_calloc.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_memccpy.c ft_strjoin.c ft_split.c ft_substr.c ft_strtrim.c ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+NAME = libft.a
+SOURCES = ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_tolower.c ft_toupper.c ft_strncmp.c ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strlcpy.c ft_strlcat.c ft_strlen.c ft_strdup.c ft_memset.c ft_bzero.c ft_calloc.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_memccpy.c ft_strjoin.c ft_split.c ft_substr.c ft_strtrim.c ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 SRCBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-all: ${TARGET}
+all: $(NAME)
 
-OBJECTS = ${SOURCES:.c=.o}
+OBJECTS = $(SOURCES:.c=.o)
 
-OBJBONUS = ${SRCBONUS:.c=.o}
+OBJBONUS = $(SRCBONUS:.c=.o)
 
-${TARGET}: ${OBJECTS}
-	ar rc $@ ${OBJECTS}
+$(NAME): $(OBJECTS)
+	ar rc $@ $(OBJECTS)
 
 %.o: %.c
-	${CC} -c ${CFLAGS} $< -o $@
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf ${OBJECTS}
-	rm -rf ${OBJBONUS}
+	rm -rf $(OBJECTS)
+	rm -rf $(OBJBONUS)
 
 fclean: clean
-	rm -rf ${TARGET}
+	rm -rf $(NAME)
 
 re: fclean all
 
-bonus: ${OBJBONUS}
-	ar rc ${TARGET} ${OBJBONUS}
+bonus: $(OBJBONUS)
+	ar rc $(NAME) $(OBJBONUS)

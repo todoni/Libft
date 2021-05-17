@@ -6,13 +6,20 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 18:26:47 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/03 19:10:31 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/17 20:09:12 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+static int	ft_islower(int c)
+{
+	if (c >= 97 && c <= 122)
+		return (c);
+	return (0);
+}
+
+int			ft_toupper(int c)
 {
 	int	result;
 

@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 18:30:28 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/16 21:20:12 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/17 19:49:31 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char*)(s + ft_strlen(s)));
 	while (len > 0)
 	{
-		if (s[len - 1] == c)
+		if (s[len - 1] == (char)c)
 			return ((char*)s + len - 1);
 		len--;
 	}

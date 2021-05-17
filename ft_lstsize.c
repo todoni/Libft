@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 19:32:09 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/11 19:46:55 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/17 21:06:27 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	size;
 
 	size = 0;
-	while (lst != 0)
+	while (lst)
 	{
 		size++;
 		lst = lst->next;
