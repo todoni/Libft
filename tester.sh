@@ -9,6 +9,7 @@ git clone https://github.com/jtoty/Libftest
 cd Libftest/
 ./grademe.sh
 sed -i "" 's/~\/libft/..\//' my_config.sh
+cd Libftest/
 ./grademe.sh -n -b
 ./grademe.sh -n -u -ob
 cd ..
