@@ -6,29 +6,22 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 21:13:10 by sohan             #+#    #+#             */
-/*   Updated: 2021/04/14 16:21:49 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/24 15:33:29 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int		is_seperator(char charset, char str)
-{
-	if (str == charset)
-		return (1);
-	return (0);
-}
-
-int		count_word(char *str, char charset)
+static int			count_word(const char *str, char c)
 {
 	int	word_count;
 
 	word_count = 0;
 	while (*str)
 	{
-		while (!is_seperator(charset, *str) && *str)
+		while (*str != c && *str)
 			str++;
-		if (!is_seperator(charset, *(str - 1)))
+		if (*(str - 1) != c)
 		{
 			word_count++;
 		}
@@ -39,12 +32,12 @@ int		count_word(char *str, char charset)
 	return (word_count);
 }
 
-int		count_word_len(char *str, char charset)
+static int			count_word_len(const char *str, char c)
 {
 	int word_len;
 
 	word_len = 0;
-	while (!is_seperator(charset, *str) && *str)
+	while (*str != c && *str)
 	{
 		str++;
 		word_len++;
@@ -52,48 +45,60 @@ int		count_word_len(char *str, char charset)
 	return (word_len);
 }
 
-char	*put_words(char **strs, char *str, char charset, int i)
+static const char	*put_words(char **strs, const char *str, char c, int i)
 {
 	int j;
 
 	j = 0;
-	while (!is_seperator(charset, *str) && *str)
+	while (*str != c && *str)
 	{
 		strs[i][j] = *str;
 		j++;
 		str++;
 	}
 	strs[i][j] = '\0';
-	while (is_seperator(charset, *str))
+	while (*str == c)
 		str++;
 	return (str);
 }
 
-char	**ft_split(char *str, char charset)
+static void			free_memory(char **strs, int i)
+{
+	int	index;
+
+	index = 0;
+	while (index <= i)
+	{
+		free(strs[index]);
+		index++;
+	}
+	free(strs);
+}
+
+char				**ft_split(const char *str, char c)
 {
 	char	**strs;
 	int		i;
 	int		num_word;
-	int		word_len;
 
 	strs = 0;
 	i = 0;
-	word_len = 0;
-	while (is_seperator(charset, *str) && *str)
+	while (*str == c && *str)
 		str++;
-	num_word = count_word(str, charset);
-	strs = (char **)malloc((num_word + 1) * sizeof(char *));
+	num_word = count_word(str, c);
+	strs = (char **)ft_calloc(num_word + 1, sizeof(char *));
 	if (strs == 0)
 		return (0);
 	while (i < num_word)
 	{
-		word_len = count_word_len(str, charset);
-		strs[i] = (char *)malloc(word_len * sizeof(char) + 1);
+		strs[i] = (char *)ft_calloc(count_word_len(str, c) + 1, sizeof(char));
 		if (strs[i] == 0)
+		{
+			free_memory(strs, i);	
 			return (0);
-		str = put_words(strs, str, charset, i);
+		}
+		str = put_words(strs, str, c, i);
 		i++;
 	}
-	strs[i] = 0;
 	return (strs);
 }

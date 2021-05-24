@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 18:52:36 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/17 20:06:19 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/24 14:48:23 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ static int	ft_isspace(int c)
 		return (1);
 	return (0);
 }
+
+//static int	is_exceed(const char *str)
+//{
+//	(char*)str;
+//	return 0;
+//}
 
 int			ft_atoi(const char *str)
 {
