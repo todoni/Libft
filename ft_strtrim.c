@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 18:14:41 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/24 14:33:31 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/24 20:15:00 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@ static size_t	find_location(char const *s1_moved, char const *set)
 {
 	size_t	location;
 
-	int i = 0;
 	location = 0;
 	while (*set)
 	{
 		if (ft_strncmp(s1_moved, set, 1) == 0)
 		{
 			location++;
+			break ;
 		}
 		set++;
-		i++;
 	}
 	return (location);
 }

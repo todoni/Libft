@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 21:13:10 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/24 15:33:29 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/24 20:15:28 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char				**ft_split(const char *str, char c)
 		strs[i] = (char *)ft_calloc(count_word_len(str, c) + 1, sizeof(char));
 		if (strs[i] == 0)
 		{
-			free_memory(strs, i);	
+			free_memory(strs, i);
 			return (0);
 		}
 		str = put_words(strs, str, c, i);
