@@ -10,8 +10,7 @@ cd Libftest/
 ./grademe.sh
 sed -i "" 's/~\/libft/..\//' my_config.sh
 cd Libftest/
-./grademe.sh -n -b
-./grademe.sh -n -u -ob
+./grademe.sh -n
 cd ..
 echo -e "\033[32;1m"WAR MACHINE"\033[m"
 read $a

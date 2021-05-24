@@ -6,7 +6,7 @@
 #    By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 20:31:44 by sohan             #+#    #+#              #
-#    Updated: 2021/05/20 18:06:38 by sohan            ###   ########.fr        #
+#    Updated: 2021/05/22 20:57:37 by sohan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ OBJECTS = $(SOURCES:.c=.o)
 OBJBONUS = $(SRCBONUS:.c=.o)
 
 ifdef BONUS
-$(NAME): $(OBJBONUS)
-	ar rc $@ $(OBJBONUS)
+$(NAME): $(OBJECTS) $(OBJBONUS)
+	ar rc $@ $(OBJECTS) $(OBJBONUS)
 else
 $(NAME): $(OBJECTS)
 	ar rc $@ $(OBJECTS)

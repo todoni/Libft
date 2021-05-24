@@ -6,7 +6,7 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 21:25:58 by sohan             #+#    #+#             */
-/*   Updated: 2021/05/17 19:09:38 by sohan            ###   ########.fr       */
+/*   Updated: 2021/05/22 18:55:08 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	while (*lst)
 	{
+		temp = ft_lstnew((*lst)->next);
 		ft_lstdelone(*lst, del);
-		temp = (*lst)->next;
-		*lst = temp;
+		*lst = temp->content;
+		free(temp);
 	}
 }
